@@ -1,0 +1,51 @@
+
+<% layout("/layouts/boilerplate")%>
+<body>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">
+    <form method="post" action="/listings/<%=x._id%>/update?_method=patch" class="needs-validation" novalidate enctype="multipart/form-data">   
+        <div class="mb-3">
+            <label for="title" class="form-label">enter title</label>
+            <input type="text" name="title" value="<%=x.title%>" class="form-control" required>
+            <div class="valid-feedback">this is title</div>
+            <div class="invalid-feedback">this is not title</div>
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">description</label>
+            <textarea name="description" class="form-control"crequired><%=x.description%></textarea> 
+        </div>
+        <div class="mb-3">
+           Original image <br>
+           <img src="<%=oi%>" alt="">
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">image link</label>
+            <input type="file" name="image"   class="form-control">
+        </div>
+        <div class="row">
+        <div class="mb-3 col-md-4">  
+            <label for="price" class="form-label">price</label>
+            <input type="number" name="price" value="<%=x.price%>" class="form-control" required>
+        </div>
+       
+        <div class="mb-3 col-md-8">
+            <label for="country" class="form-label">country</label>
+            <input type="text" name="country" value="<%=x.country%>" class="form-control" required>
+        </div>
+    </div>
+        <div class="mb-3">
+            <label for="location" class="form-label">location</label>
+            <input type="text" name="location" value="<%=x.location%>" class="form-control" required>
+        </div>
+        <button class="btn btn-dark mt-3 add-btn">submit</button>
+    </div>
+</div>
+          <!-- <input type="text" name="title" value="<%=x.title%>"><br> -->
+        <!-- <textarea name="description" ><%=x.description%></textarea> <br> -->
+        <!-- <input type="text" name="image" value="<%=x.image%>" ><br> -->
+        <!-- <input type="number" name="price" value="<%=x.price%>"><br> -->
+        <!-- <input type="text" name="location" value="<%=x.location%>"><br> -->
+        <!-- <input type="text" name="country" value="<%=x.country%>"><br> -->
+       
+    </form>
+</body>
