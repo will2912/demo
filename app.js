@@ -107,9 +107,9 @@ app.use("/user",userRouter)
 
 
 //1 err handling for wrong route
-// app.all("*",(req,res,next)=>{
-//     next(new expressError(405,"page not found"))
-// })
+app.all("*",(req,res,next)=>{
+    next(new expressError(405,"page not found"))
+})
 app.use((err,req,res,next)=>{
     let {status=200,message="exeption"}=err;
     console.log("error");
